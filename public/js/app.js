@@ -20,8 +20,8 @@ form.addEventListener('submit', (e) => {
         if (data.error){
             msgOne.innerHTML = data.error
         } else {
-            msgOne.innerHTML = data.location
-            msgTwo.innerHTML = data.temperature
+            msgOne.innerHTML = 'in ' + data.location + ' is het nu ' + data.temperature + '&#8451;.'
+            msgTwo.innerHTML = data.desc
         }
     })
 })

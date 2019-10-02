@@ -11,10 +11,10 @@ function geocode(address, callback){
         } else if(body.features.length === 0) {
             callback('location could not be found.')
         } else {
-            const { center, place_name:placeName } = body.features[0]
+            const { center, place_name:location } = body.features[0]
             const coordinates = [center[1], center[0]].toString()
 
-            callback(e, coordinates, placeName)   
+            callback(e, coordinates, location)   
         }
     }) 
 }

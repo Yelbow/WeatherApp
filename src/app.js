@@ -38,15 +38,16 @@ app.get('/weather', ({ query }, res) => {
        return res.send({error:'you must provide an address'})
     }
 
-    geocode(query.address, (e, coordinates, placeName) => {
+    geocode(query.address, (e, coordinates, location) => {
     if (e) { return res.send({error: e}) }
 
-        forecast(coordinates, (e, temp) => {
+        forecast(coordinates, (e, temperature, desc) => {
             if (e) { return res.send({error: e}) }
 
             res.send({
-                location: placeName,
-                temperature: temp + ' &#8451;'
+                location,
+                temperature,
+                desc,
             })
         })
     }) 

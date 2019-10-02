@@ -12,9 +12,12 @@ function forecast(coordinates, callback){
             callback('location could not be found.')
         } else {
             const { temperature, summary } = body.currently
-            callback(e, temperature, summary )    
+            const { temperatureLow, temperatureHigh  } = body.daily.data[0]
+
+            const desc = summary + '. De koudste temperatuur van vandaag is '+temperatureLow+'&#8451;. Op zijn warmst wordt het vandaag '+temperatureHigh+'&#8451;.' 
+
+            callback(e, temperature, desc)    
         }
     })
 }
-
 module.exports = forecast
