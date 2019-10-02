@@ -46,7 +46,7 @@ app.get('/weather', ({ query }, res) => {
 
             res.send({
                 location: placeName,
-                temperature: temp + ' degrees'
+                temperature: temp + ' &#8451;'
             })
         })
     }) 
