@@ -68,7 +68,7 @@ app.get('/products', ({ query }, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'need help?',
-        msg: 'for help dial 1800-need-help-urgently-my-wife-is-dieing'
+        msg: 'for help dial 1800-need-help-urgently-my-wife-is-dying'
     })
 })
 
